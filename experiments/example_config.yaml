@@ -1,0 +1,38 @@
+# Example experiment configuration
+# Start with a small subset to verify everything works
+
+name: "2026-01-initial-test"
+samples_per_prompt: 3
+prompt_file: "prompts/battery.yaml"
+output_dir: "experiments"
+
+models:
+  - provider: openai
+    model_id: gpt-4o
+    temperature: 0.7
+    max_tokens: 1024
+
+  - provider: anthropic
+    model_id: claude-sonnet-4-20250514
+    temperature: 0.7
+    max_tokens: 1024
+
+  - provider: xai
+    model_id: grok-3
+    temperature: 0.7
+    max_tokens: 1024
+
+  - provider: google
+    model_id: gemini-2.0-flash
+    temperature: 0.7
+    max_tokens: 1024
+
+# Start with just a few prompts to test the setup
+prompt_ids:
+  - def_01
+  - def_02
+  - epi_01
+  - saf_01
+  - wrm_01
+  - div_01
+  - ctrl_01

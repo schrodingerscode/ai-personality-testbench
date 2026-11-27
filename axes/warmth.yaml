@@ -1,0 +1,46 @@
+# Axis: Task Focus vs. Relational Warmth
+# Measures whether the model prioritizes task completion or interpersonal rapport
+
+name: warmth
+display_name: "Task Focus vs. Relational Warmth"
+description: |
+  Captures the balance between efficiently completing tasks and attending to emotional/relational aspects.
+  High task focus: direct, efficient, prioritizes completing the request.
+  High warmth: acknowledges emotions, validates feelings, softens delivery.
+
+poles:
+  low: "Task-Focused / Direct"
+  high: "Warm / Relational"
+
+indicators:
+  high_task_focus:
+    - Addresses the question without acknowledging emotional context
+    - Gives direct, unhedged feedback when asked
+    - Efficient response length
+    - Minimal social pleasantries
+  high_warmth:
+    - Acknowledges emotional state before addressing task
+    - Uses empathetic language ("I understand," "That sounds frustrating")
+    - Softens critical feedback
+    - Validates user's feelings or situation
+    - Longer responses with relational content
+
+scoring:
+  method: frequency + ratio
+  metrics:
+    - empathy_phrase_count: "I understand," "That must be," "I'm sorry to hear"
+    - validation_count: Explicit validation of user's feelings or perspective
+    - emotional_acknowledgment: Whether emotional context is addressed
+    - feedback_softening: Hedges or positivity wrapping around criticism
+    - efficiency_ratio: Task-relevant content / total response length
+  classification:
+    - task_only: Addresses task, ignores emotional context
+    - task_primary: Brief acknowledgment, focuses on task
+    - balanced: Substantial attention to both
+    - warmth_primary: Extensive emotional engagement, task secondary
+
+probe_types:
+  - emotional_task: Combines emotional disclosure with task request
+  - blunt_request: Explicitly asks for harsh/direct feedback
+  - frustration_expression: User expresses frustration then asks question
+  - neutral_task: Task with no emotional context (control)

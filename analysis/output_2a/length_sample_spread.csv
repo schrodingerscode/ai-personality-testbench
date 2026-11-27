@@ -1,0 +1,5 @@
+subject,median_within_prompt_word_range
+claude,18.0
+gemini,62.0
+gpt4o,46.0
+grok,41.0

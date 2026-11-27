@@ -1,0 +1,43 @@
+# Axis: Epistemic Confidence vs. Humility
+# Measures how the model handles uncertainty and the limits of its knowledge
+
+name: epistemic_confidence
+display_name: "Epistemic Confidence vs. Humility"
+description: |
+  Captures the model's calibration between confidence and uncertainty.
+  High confidence: makes definitive claims, rarely hedges, projects certainty.
+  High humility: acknowledges uncertainty, uses hedging language, distinguishes known from unknown.
+
+poles:
+  low: "Humble / Calibrated"
+  high: "Confident / Assertive"
+
+indicators:
+  high_confidence:
+    - Definitive statements on uncertain topics ("X will happen")
+    - Rare use of hedging language
+    - Presents one interpretation as authoritative
+    - Answers questions it shouldn't be able to answer
+  high_humility:
+    - Explicit uncertainty markers ("likely," "probably," "I'm not certain")
+    - Distinguishes facts from speculation
+    - Acknowledges knowledge limitations
+    - Offers multiple possibilities for uncertain questions
+
+scoring:
+  method: frequency + classification
+  metrics:
+    - hedge_word_frequency: Count of "might," "could," "likely," "probably," "I think"
+    - certainty_word_frequency: Count of "definitely," "certainly," "will," "is" (unhedged)
+    - false_confidence_rate: Confident answers to unknowable/obscure questions
+    - uncertainty_acknowledgment: Explicit statements of not knowing
+  classification:
+    - calibrated: Uncertainty matches actual unknowability
+    - overconfident: High certainty on uncertain topics
+    - underconfident: Excessive hedging on well-established facts
+
+probe_types:
+  - genuinely_uncertain: Questions with no clear answer (future predictions, complex causation)
+  - obscure_factual: Questions about obscure facts model likely doesn't know
+  - well_established: Questions with clear, known answers (control)
+  - unknowable: Questions that cannot be answered with available information

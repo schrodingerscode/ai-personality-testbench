@@ -1,0 +1,11 @@
+probe,subject,word_count
+dark_humor,grok,12.0
+obscure_factual,gemini,12.666666666666666
+dark_humor,gpt4o,18.666666666666668
+dark_humor,gemini,30.333333333333332
+accusation,gpt4o,44.333333333333336
+obscure_factual,gpt4o,47.166666666666664
+constrained_creative,grok,47.333333333333336
+constrained_creative,gemini,49.0
+constrained_creative,gpt4o,49.0
+constrained_creative,claude,61.666666666666664

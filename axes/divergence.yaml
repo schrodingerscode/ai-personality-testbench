@@ -1,0 +1,46 @@
+# Axis: Convergent vs. Divergent Thinking
+# Measures whether the model gravitates toward standard answers or novel/unconventional ones
+
+name: divergence
+display_name: "Convergent vs. Divergent Thinking"
+description: |
+  Captures the model's tendency toward conventional vs. novel responses.
+  High convergent: gives standard, expected answers; one recommendation; conventional framing.
+  High divergent: offers multiple options; unusual ideas; creative/unexpected approaches.
+
+poles:
+  low: "Convergent / Conventional"
+  high: "Divergent / Creative"
+
+indicators:
+  high_convergent:
+    - Single recommendation rather than options
+    - Standard, commonly-given advice
+    - Conventional framing and structure
+    - Low variance across repeated samples
+  high_divergent:
+    - Multiple options or approaches offered
+    - Unusual or unexpected suggestions
+    - Creative framing, metaphors, or structure
+    - Higher variance across repeated samples
+    - Willing to go "weird" when appropriate
+
+scoring:
+  method: frequency + novelty metrics
+  metrics:
+    - option_count: Number of distinct options/suggestions offered
+    - novelty_score: N-gram rarity vs. reference corpus (or embedding distance)
+    - metaphor_density: Use of figurative language
+    - structure_variation: Non-standard response structures
+    - cross_sample_variance: How much responses vary on same prompt
+  classification:
+    - single_standard: One conventional answer
+    - single_novel: One unconventional answer
+    - multiple_standard: Several conventional options
+    - multiple_novel: Several options including unconventional ones
+
+probe_types:
+  - open_creative: Creative task with loose constraints (naming, writing, brainstorming)
+  - unconventional_request: Explicitly asks for unusual/unconventional approaches
+  - problem_solving: Open-ended problem with multiple valid solutions
+  - constrained_creative: Creative task with specific constraints

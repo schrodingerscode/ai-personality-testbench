@@ -1,0 +1,30 @@
+# Full battery run - 105 prompts × 4 models × 3 samples = 1,260 API calls
+# Estimated time: 60-90 minutes
+
+name: "2026-01-full-battery"
+samples_per_prompt: 3
+prompt_file: "prompts/battery.yaml"
+output_dir: "experiments"
+
+models:
+  - provider: openai
+    model_id: gpt-4o
+    temperature: 0.7
+    max_tokens: 1024
+
+  - provider: anthropic
+    model_id: claude-sonnet-4-20250514
+    temperature: 0.7
+    max_tokens: 1024
+
+  - provider: xai
+    model_id: grok-3
+    temperature: 0.7
+    max_tokens: 1024
+
+  - provider: google
+    model_id: gemini-2.0-flash
+    temperature: 0.7
+    max_tokens: 1024
+
+# No prompt_ids filter - run all prompts

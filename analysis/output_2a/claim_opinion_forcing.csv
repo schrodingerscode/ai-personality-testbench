@@ -1,0 +1,5 @@
+subject,prompts,responses,lexical_opinion_flag,judge_directness
+claude,4,12,3,1.5120915927272296
+gpt4o,4,12,0,2.3894156469011443
+grok,4,12,5,1.653034989689349
+gemini,4,12,3,1.4876311004678602

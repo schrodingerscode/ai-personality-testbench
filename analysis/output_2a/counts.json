@@ -1,0 +1,23 @@
+{
+  "unique_prompts": 143,
+  "prompts_by_experiment": {
+    "2026-01-full-battery": 109,
+    "2026-01-political-edgy-boundary": 34
+  },
+  "samples_per_prompt_per_model": 3,
+  "subject_models": 4,
+  "responses_total": 1716,
+  "responses_per_model": 429,
+  "judge_models": 4,
+  "judgments_attempted": 6864,
+  "judgments_valid": 6767,
+  "judgments_unparseable_by_judge": {
+    "claude": 2,
+    "gemini": 94,
+    "gpt4o": 0,
+    "grok": 1
+  },
+  "self_judgments_valid": 1689,
+  "dimension_scores_valid": 40602,
+  "responses_scored_by_all_four_judges": 1619
+}

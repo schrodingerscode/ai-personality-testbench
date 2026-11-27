@@ -1,0 +1,5 @@
+subject,responses,refusals
+claude,102,1
+gpt4o,102,3
+grok,102,0
+gemini,102,3

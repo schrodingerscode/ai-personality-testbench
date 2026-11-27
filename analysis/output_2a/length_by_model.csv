@@ -1,0 +1,5 @@
+subject,responses,mean_words,median_words,truncated,near_token_cap
+claude,429,208.8904428904429,214.0,0,0
+gpt4o,429,300.4079254079254,332.0,0,0
+grok,429,560.5944055944055,705.0,197,205
+gemini,429,516.5128205128206,616.0,0,0
